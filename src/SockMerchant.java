@@ -16,7 +16,7 @@ public class SockMerchant {
         int result = 0;
         // This is to group how many socks you want
         int countSocksInPair = 2;
-        
+
         for (Integer count : pairs.values()) {
             result += (count / countSocksInPair);
         }
