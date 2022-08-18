@@ -1,3 +1,5 @@
+package hackerRank;
+
 public class StringXOR {
     public static String stringXor(String string1, String string2) {
         StringBuilder result = new StringBuilder();

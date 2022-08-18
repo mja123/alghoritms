@@ -1,3 +1,5 @@
+package hackerRank;
+
 public class HourFormat {
 
     public static String timeConversion(String s) {

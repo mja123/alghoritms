@@ -1,3 +1,5 @@
+package hackerRank;
+
 public class CesarCipher {
     public static String caesarCipher(String s, int k) {
         StringBuilder result = new StringBuilder();

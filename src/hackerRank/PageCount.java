@@ -1,3 +1,5 @@
+package hackerRank;
+
 public class PageCount {
     public static int pageCount(int n, int p) {
         if ((((n - p) == 1) && (p % 2 == 0)) || (p == 1)) {

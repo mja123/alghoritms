@@ -1,3 +1,5 @@
+package hackerRank;
+
 import java.sql.Array;
 import java.util.*;
 

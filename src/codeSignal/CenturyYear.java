@@ -1,3 +1,5 @@
+package codeSignal;
+
 public class CenturyYear {
     static int solution(int year) {
 

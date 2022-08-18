@@ -1,3 +1,5 @@
+package codeSignal;
+
 public class Palindrome {
     static boolean solution(String inputString) {
         int middle = inputString.length() / 2;

@@ -1,3 +1,5 @@
+package hackerRank;
+
 import java.util.Comparator;
 import java.util.List;
 

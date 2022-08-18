@@ -1,3 +1,5 @@
+package hackerRank;
+
 public class FlipBits {
     public static long flippingBits(long n) {
         //count of bits
