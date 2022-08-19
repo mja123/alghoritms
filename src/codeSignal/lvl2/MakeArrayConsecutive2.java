@@ -1,4 +1,4 @@
-package codeSignal;
+package codeSignal.lvl2;
 
 import java.util.Arrays;
 

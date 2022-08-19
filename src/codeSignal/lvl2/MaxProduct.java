@@ -1,4 +1,4 @@
-package codeSignal;
+package codeSignal.lvl2;
 
 public class MaxProduct {
     static int solution(int[] inputArray) {

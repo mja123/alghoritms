@@ -1,4 +1,4 @@
-package codeSignal;
+package codeSignal.lvl1;
 
 public class CenturyYear {
     static int solution(int year) {

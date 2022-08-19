@@ -1,4 +1,4 @@
-package codeSignal;
+package codeSignal.lvl1;
 
 public class Palindrome {
     static boolean solution(String inputString) {

@@ -1,4 +1,4 @@
-package codeSignal;
+package codeSignal.lvl2;
 
 public class PolygonArea {
     //https://app.codesignal.com/arcade/intro/level-2/yuGuHvcCaFCKk56rJ/solutions
