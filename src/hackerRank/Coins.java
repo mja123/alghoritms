@@ -1,10 +1,8 @@
 package hackerRank;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /*
 Coins = 400;
@@ -15,45 +13,38 @@ Coins = 400;
         Write a method that will show all possible combinations that can bought for coins*/
 public class Coins {
     public static int combinations(int coins, int...products) {
-        int result = 0;
         Set<String> combinations = new HashSet<>();
         StringBuilder combination = new StringBuilder();
 
-
         for (int i : products) {
-            if (!combinations.contains(combination.toString())) {
-                //Spending all the budget in only one product.
-                combination.append(String.valueOf(i).repeat(Math.max(0, coins / i)));
+            //Spending all the budget in only one product.
+            for (int j = 1; j < (coins / i) + 1; j++) {
+                combination.append(String.valueOf(i).repeat(j));
                 combinations.add(combination.toString());
-                result += 1;
                 combination.delete(0, combination.length() - 1);
             }
-            int budget = coins;
-            int iterations = 0;
+
+            int budget = coins - i;
             combination.append(i);
-            budget -= i;
-            while (((budget > 0) && (combinations.contains(combination.toString())))
-                    || (iterations < (products.length * products.length))) {
+
+                //Mixing products
                 for (int j : products) {
                     if ((budget - j) >= 0) {
                         combination.append(j);
                         budget -= j;
                     }
+                    if (budget < Arrays.stream(products).min().getAsInt()) {
+                        break;
+                    }
                 }
-                iterations ++;
-            }
-            if (budget < Arrays.stream(products).min().getAsInt() && budget > 0) {
-                combinations.add(combination.toString());
-                result += 1;
-            }
 
+            combinations.add(combination.toString());
             combination.delete(0, combination.length() - 1);
         }
-        combinations.forEach(System.out::println);
-        return result;
-    }
 
+        return combinations.size();
+    }
     public static void main(String[] args) {
-        System.out.println(combinations(400, 100, 200, 250));
+        System.out.println(combinations(400, 100, 200, 250, 300));
     }
 }
