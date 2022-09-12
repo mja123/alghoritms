@@ -27,16 +27,16 @@ public class Coins {
             int budget = coins - i;
             combination.append(i);
 
-                //Mixing products
-                for (int j : products) {
-                    if ((budget - j) >= 0) {
-                        combination.append(j);
-                        budget -= j;
-                    }
-                    if (budget < Arrays.stream(products).min().getAsInt()) {
-                        break;
-                    }
+            //Mixing products
+            for (int j : products) {
+                if ((budget - j) >= 0) {
+                    combination.append(j);
+                    budget -= j;
                 }
+                if (budget < Arrays.stream(products).min().getAsInt()) {
+                    break;
+                }
+            }
 
             combinations.add(combination.toString());
             combination.delete(0, combination.length() - 1);
