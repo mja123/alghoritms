@@ -51,21 +51,23 @@ public class RollerCoasters {
 
     public static int strictlyAscendant (List<Integer> rollerCoasters) {
     //Collecting the elements that are in strictly ascendant order
-        int maxConsecutiveGreater = 0;
+        int maxConsecutiveGreater = 1;
 
         for(int i = 0; i < rollerCoasters.size(); i++) {
-            int currentConsecutive = 0;
-
+            int currentConsecutive = 1;
+            int maxNumber = rollerCoasters.get(i);
             for(int j = i + 1; j < rollerCoasters.size(); j++) {
 
-                if (rollerCoasters.get(i) >= rollerCoasters.get(j)) {
+                if (maxNumber >= rollerCoasters.get(j)) {
                     break;
                 }
+                maxNumber = rollerCoasters.get(j);
                 currentConsecutive++;
             }
             if (currentConsecutive > maxConsecutiveGreater) {
                 maxConsecutiveGreater = currentConsecutive;
             }
+
         }
 
         return maxConsecutiveGreater * 10;
