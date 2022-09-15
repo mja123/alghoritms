@@ -1,5 +1,7 @@
 package metaHackathon;
 
+import metaHackathon.utils.FIleUtil;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +27,10 @@ public class RollerCoasters {
 
     public static void main(String[] args){
 
-        Optional<List<Integer>> rollerCoaster = inputFileIntoArray(new File("src/resources/rollercoasters_medium_input.txt"));
+        Optional<List<Integer>> rollerCoaster = inputFileIntoArray(new File("src/resources/rollerCoaster/rollercoasters_medium_input.txt"));
         if (rollerCoaster.isPresent()) {
            int result = strictlyAscendant(rollerCoaster.get());
-           createAnswerFile(result);
+           FIleUtil.createAnswerFile(result, "src/resources/rollerCoaster/rollerCoasterResult.txt");
         }
     }
 
@@ -71,15 +73,5 @@ public class RollerCoasters {
         }
 
         return maxConsecutiveGreater * 10;
-    }
-    private static void createAnswerFile(int rollerCoasterResult) {
-    //Crating a file with the problem's answer.
-
-        try (FileWriter answer = new FileWriter("src/resources/rollerCoasterResult.txt")) {
-            answer.append(String.valueOf(rollerCoasterResult));
-
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
     }
 }
