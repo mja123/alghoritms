@@ -2,7 +2,7 @@
 package codeSignal.lvl3;
 
 public class ReverseInParentheses {
-    //This is an external solution that I did some changes, I couldn't solve it :(
+    //This is an external solution that I did some changes, I couldn't solved it :(
     //Below is my attempted
     String solution(String inputString) {
         StringBuilder str = new StringBuilder(inputString);
