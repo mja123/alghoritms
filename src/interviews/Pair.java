@@ -17,9 +17,20 @@ public class Pair {
 
         int columns = 2;
         int rows = permutation(numbers.length, columns);
-
         int[][] pairs = new int[rows][columns];
 
+        int rowIndex = 0;
+        for (int i = 0; i < rows; i++) {
+            int columnIndex = 1 + i;
+
+            while (columnIndex < numbers.length ) {
+                pairs[rowIndex][0] = numbers[i];
+                pairs[rowIndex][1] = numbers[columnIndex];
+                columnIndex++;
+                rowIndex++;
+            }
+
+        }
         return pairs;
     }
     private static int permutation(int n, int r) {
@@ -35,6 +46,31 @@ public class Pair {
     }
 
     public static void main(String[] args) {
-        System.out.println(permutation(3, 2));
+        int[] input = {0, 1, 2, 3, 4, 5};
+        int[][] result = solution(input);
+        for (int[] ints : result) {
+            for (int j = 0; j < result[0].length; j++) {
+                System.out.print(ints[j] + " ");
+            }
+            System.out.println(" ");
+        }
+        //
+    /*  0,1
+        0,2
+        0,3
+        0,4
+        0,5
+        1,2
+        1,3
+        1,4
+        1,5
+        2,3
+        2,4
+        2,5
+        3,4
+        3,5
+        4,5
+
+         */
     }
 }
