@@ -1,4 +1,4 @@
-package hackerRank;
+package interviews;
 
 import java.util.Arrays;
 import java.util.HashSet;
