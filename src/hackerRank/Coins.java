@@ -15,7 +15,7 @@ public class Coins {
     public static int combinations(int coins, int...products) {
         Set<String> combinations = new HashSet<>();
         StringBuilder combination = new StringBuilder();
-        
+
         for (int i : products) {
             //Spending all the budget in only one product.
             for (int j = 1; j < (coins / i) + 1; j++) {
