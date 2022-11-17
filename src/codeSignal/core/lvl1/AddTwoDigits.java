@@ -1,4 +1,4 @@
-package codeSignal.core;
+package codeSignal.core.lvl1;
 
 public class AddTwoDigits {
     int solution(int n) {
