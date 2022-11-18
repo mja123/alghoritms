@@ -1,6 +1,7 @@
 package groockingAlgBook;
 
 public class BinarySearch {
+
     static int solution (int s, int l, int h, int goal) {
         int m = (l + h) / 2;
         s++;
