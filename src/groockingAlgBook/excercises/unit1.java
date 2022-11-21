@@ -1,5 +1,8 @@
 package groockingAlgBook.excercises;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class unit1 {
     /*
     1.1 Suppose you have a sorted list of 128 names, and you’re searching through it using binary search.
@@ -26,14 +29,15 @@ public class unit1 {
     Welcome to binary code (byte representation)
      */
     public static void main(String[] args) {
-        System.out.println(recursiveBinaryCalculus(2000000000, 0));
+        System.out.println(recursiveBinaryCalculus(1024, 0));
         System.out.println(loopBinaryCalculus(2000000000));
         System.out.println(Math.pow(2, 31));
+
     }
 
     public static int recursiveBinaryCalculus(int number, int steps) {
 
-        if (number < 1) {
+        if (number <= 1) {
             return steps;
         }
         steps++;
@@ -49,4 +53,6 @@ public class unit1 {
         }
         return steps;
     }
+
+
 }
