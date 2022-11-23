@@ -22,7 +22,6 @@ public class CompleteWord {
     }
 
 
-
     public static void main(String[] args) {
         System.out.println(solution("3[asdf]"));
         System.out.println(solution("3[a]3[b]"));
