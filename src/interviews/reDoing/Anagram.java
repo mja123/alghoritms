@@ -54,6 +54,7 @@ public class Anagram {
                         .sorted()
                         .collect(StringBuilder::new,
                                 StringBuilder::appendCodePoint,
+                                StringBuilder::append
                                 )
                         .toString());
 
