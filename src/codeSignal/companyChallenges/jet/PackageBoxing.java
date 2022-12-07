@@ -27,7 +27,6 @@ public class PackageBoxing {
                         boxVolume[0] = i;
                         boxVolume[1] = currentVolume;
                     }
-
                 }
             }
         }

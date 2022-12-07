@@ -1,8 +1,6 @@
 package codeSignal.companyChallenges.jet;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ShoppingCart {
     static String[] solution(String[] requests) {
@@ -22,7 +20,7 @@ public class ShoppingCart {
 
             String currentProduct = actions[1].substring(1);
 
-            switch(actions[0].replace(" ", "")) {
+            switch(actions[0].trim()) {
                 case "add":
                     if (products.containsKey(currentProduct)) {
                         products.put(currentProduct, products.get(currentProduct) + 1);
@@ -41,7 +39,7 @@ public class ShoppingCart {
                     break;
 
                 default:
-                    Integer value = Integer.parseInt(actions[2].replace(" ", "").substring(1));
+                    Integer value = Integer.parseInt(actions[2].trim().substring(1));
                     currentProduct = currentProduct.substring(0, currentProduct.length() - 1);
 
                     if (actions[2].charAt(1) == '+') {
@@ -62,14 +60,16 @@ public class ShoppingCart {
             product++;
         }
 
+
         return products.entrySet().stream()
-                .map(e -> new String(e.getKey() + " : " + e.getValue()))
+                .map(e -> e.getKey() + " : " + e.getValue())
                 .toArray(String[]::new);
 
     }
 
     public static void main(String[] args) {
-        Arrays.stream(solution(new String[]{"add : milk",
+        Arrays.stream(solution(new String[]{
+                "add : milk",
                 "add : pickles",
                 "add : fruitz",
                 "add : vegetables",
@@ -86,7 +86,8 @@ public class ShoppingCart {
                 "quantity_upd : computer mouse : +5",
                 "quantity_upd : computer : +3",
                 "quantity_upd : fruitz : -50",
-                "add : fruitz seed"})).forEach(System.out::println);
+                "add : fruitz seed"}))
+                .forEach(System.out::println);
     }
 
 }
